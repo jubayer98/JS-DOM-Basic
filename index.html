@@ -12,6 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN -->
     <script src="https://kit.fontawesome.com/050b9a6fb1.js" crossorigin="anonymous"></script>
+    <!-- Modal Style -->
+    <link rel="stylesheet" href="styles/style.css">
     <style>
         .font-manrope
         {
@@ -25,40 +27,41 @@
     <header class="mx-auto px-16 lg:px-28 bg-orange-50">
         <div class="navbar">
             <div class="navbar-start">
-                <a class="btn bg-lime-300 rounded-lg px-10 font-bold">Blog</a>
+                <a class="btn bg-lime-300 rounded-lg px-10 font-bold" href="blog.html">Blog</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <p class="font-bold"><i class="fa-solid fa-hand-holding-dollar font-bold text-orange-400"></i> Donate Bangladesh</p>
             </div>
             <div class="navbar-end gap-4 lg:flex">
-                <p class="font-bold text-gray-600"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span>5000</span> BDT</p>
+                <p class="font-bold text-gray-600"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span id="accountBalance">5000</span> BDT</p>
             </div>
         </div>
     </header>
-    
+
+    <!-- Donation Part Starts -->
     <!-- Toggle Buttons -->
     <section class="mx-auto px-16 lg:px-28">
         <div class="pt-10 mb-20">
             <div class="flex-col items-center justify-center text-center space-y-4">
-                <button class="btn bg-lime-300 rounded-lg px-10 font-bold">Donation</button>
-                <button class="btn bg-lime-300 rounded-lg px-10 font-bold">History</button>
+                <button id="donationBtn" onclick="toggleSection('donationSection')" class="btn bg-lime-300 rounded-lg px-10 font-bold">Donation</button>
+                <button id="historyBtn" onclick="toggleSection('historySection')" class="btn bg-gray-300 rounded-lg px-10 font-bold">History</button>
             </div>
         </div>
     </section>
 
     <!-- Donation Card -->
-    <section class="mx-auto px-16 lg:px-28 space-y-8">
+    <section id="donationSection" class="mx-auto px-16 lg:px-28 space-y-8">
         <!-- Card 1 -->
         <div class="lg:flex lg:space-x-3 space-y-3 rounded-lg lg:space-y-0 border border-gray-300 px-5 py-5">
             <div class="lg:w-[30%]">
                 <img class="w-full rounded-lg" src="images/image1.jpg" alt="noakhali flood">
             </div>
             <div class="space-y-3 lg:w-[70%]">
-                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span>0</span> BDT</p>
+                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span id="card1Amount">0</span> BDT</p>
                 <h3 class="font-bold">Donate for Flood at Noakhali, Bangladesh</h3>
                 <p class="font-light">The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input type="text" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
-                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold">Donate Now</button>
+                <input type="text" id="donationAmount1" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
+                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold" id="donationButton1">Donate Now</button>
             </div>
         </div>
         
@@ -68,11 +71,11 @@
                 <img class="w-full rounded-lg" src="images/image2.jpg" alt="feni flood">
             </div>
             <div class="space-y-3 lg:w-[70%]">
-                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span>600</span> BDT</p>
+                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span id="card2Amount">600</span> BDT</p>
                 <h3 class="font-bold">Donate for Flood Relief in Feni, Bangladesh</h3>
                 <p class="font-light">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                <input type="text" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
-                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold">Donate Now</button>
+                <input type="text" id="donationAmount2" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
+                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold" id="donationButton2">Donate Now</button>
             </div>
         </div>
         
@@ -82,17 +85,28 @@
                 <img class="w-full rounded-lg" src="images/image3.jpeg" alt="quota movement">
             </div>
             <div class="space-y-3 lg:w-[70%]">
-                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span>2400</span> BDT</p>
+                <p class="bg-gray-200 inline-block px-3 py-1 rounded-lg"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span id="card3Amount">2400</span> BDT</p>
                 <h3 class="font-bold">Aid for Injured in the Quota Movement</h3>
                 <p class="font-light">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                <input type="text" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
-                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold">Donate Now</button>
+                <input type="text" id="donationAmount3" placeholder="Write Donation Amount" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 mb-4">
+                <button class="btn w-full bg-lime-300 rounded-lg px-10 font-bold" id="donationButton3">Donate Now</button>
             </div>
         </div>
     </section>
+    <!-- Donation Part Ends -->
+
+    <!-- History Part Starts -->
+    <section id="historySection" class="hidden mx-auto px-16 lg:px-28">
+        <div class="space-y-3 rounded-lg lg:space-y-0 border border-gray-300 px-5 py-5">
+            <h2 class="font-bold text-xl">100 Taka is Donated for Flood at Noakhali, Bangladesh</h2>
+            <p>Date : Tue Sep 17 2024</p>
+        </div>
+    </section>
+    <!-- History Part Ends -->
     
     <!-- footer section starts here -->
     <footer class="footer mt-8 bg-orange-50 p-10"></footer>
 
+    <script src="js/app.js"></script>
 </body>
 </html>

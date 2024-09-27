@@ -1,0 +1,73 @@
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- daisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/050b9a6fb1.js" crossorigin="anonymous"></script>
+    <style>
+        .font-manrope
+        {
+            font-family: "Manrope", sans-serif;
+        }
+     </style>
+    <title>Blog</title>
+</head>
+<body class="font-manrope bg-white">
+    <!-- navbar starts here -->
+    <header class="mx-auto px-16 lg:px-28 bg-orange-50">
+        <div class="navbar">
+            <div class="navbar-start">
+                <a class="btn bg-lime-300 rounded-lg px-10 font-bold" href="index.html">Home</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <p class="font-bold"><i class="fa-solid fa-hand-holding-dollar font-bold text-orange-400"></i> Donate Bangladesh</p>
+            </div>
+            <div class="navbar-end gap-4 lg:flex">
+                <p class="font-bold text-gray-600"><i class="fa-solid fa-dollar-sign text-orange-400"></i> <span id="accountBalance">5000</span> BDT</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Important FAQ -->
+    <section class="mx-auto px-16 lg:px-28 mt-8 space-y-3">
+        <h1 class="text-2xl font-bold">Important FAQ?</h1>
+        <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+            <div class="collapse-content">
+                <p>The Document Object Model (DOM) is a programming interface that represents and allows manipulation of the structure, style, and content of a web document as a tree of objects.</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+            <div class="collapse-content">
+                <p>You can select an element from the DOM using `document.querySelector()` for a single element or `document.querySelectorAll()` for multiple elements.</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+            <div class="collapse-content">
+                <p>Event delegation is a technique where a single event listener is added to a parent element to handle events from its child elements, improving efficiency by reducing the number of event listeners.</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+            <div class="collapse-content">
+                <p>You can manipulate an element's attributes using `element.setAttribute()` or `element.removeAttribute()`, and manipulate styles using `element.style.propertyName = 'value'` or by adding/removing CSS classes with `element.classList.add()` or `element.classList.remove()`.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- footer section starts here -->
+    <footer class="footer mt-8 bg-orange-50 p-10"></footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
