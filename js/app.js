@@ -38,9 +38,24 @@ function appendDonationHistory(amount, cardHeader) {
     const historySection = document.getElementById('historySection');
     const newEntry = document.createElement('div');
     newEntry.className = "space-y-3 mt-3 rounded-lg border border-gray-300 px-5 py-5";
+
+
+    // create a new date object and format the date and time
+    const now = new Date();
+    const dateString = now.toLocaleDateString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    const timeString = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
     newEntry.innerHTML = `<h2 class="font-bold text-xl">${amount} Taka is ${cardHeader}</h2>
-                          <p>Date : Tue Sep 17 2024</p>`;
-    historySection.appendChild(newEntry);
+                          <p>Date: ${dateString} ${timeString}</p>`;
     historySection.classList.add('hidden'); // Show the history section if hidden
 }
 
