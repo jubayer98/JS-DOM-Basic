@@ -56,7 +56,9 @@ function appendDonationHistory(amount, cardHeader) {
 
     newEntry.innerHTML = `<h2 class="font-bold text-xl">${amount} Taka is ${cardHeader}</h2>
                           <p>Date: ${dateString} ${timeString}</p>`;
-    historySection.classList.add('hidden'); // Show the history section if hidden
+    
+    historySection.appendChild(newEntry);
+    historySection.classList.add('hidden');
 }
 
 // attach event listeners to buttons
